@@ -5,7 +5,7 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 2018,
-    requireConfigFile: false, // Добавим этот параметр сюда
+    sourceType: "module",
   },
   extends: [
     "eslint:recommended",
