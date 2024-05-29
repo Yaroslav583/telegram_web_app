@@ -1,32 +1,21 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import HomePage from "@/components/HomePage.vue";
-import AboutPage from "@/components/AboutPage.vue";
-import NotificationPage from "@/components/NotificationPage.vue";
 
-Vue.use(Router);
+
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../components/HomePage.vue';
+import PageOne from '../components/PageOne.vue';
+import PageTwo from '../components/PageTwo.vue';
+import PageThree from '../components/PageThree.vue';
 
 const routes = [
-    {
-        path: '/',
-        name: 'HomePage',
-        component: HomePage
-    },
-    {
-        path: '/AboutPage',
-        name: 'AboutPage',
-        component: AboutPage
-    },
-    {
-        path: '/NotificationPage',
-        name: 'NotificationPage',
-        component: NotificationPage
-    }
+    { path: '/', component: HomePage },
+    { path: '/page1', component: PageOne },
+    { path: '/page2', component: PageTwo },
+    { path: '/page3', component: PageThree },
 ];
 
-const router = new Router({
-    mode: 'history',
-    routes
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
 });
 
 export default router;
