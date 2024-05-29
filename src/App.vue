@@ -8,11 +8,26 @@
     </nav>
     <router-view></router-view>
   </div>
+  <div>
+    <button @click="sendNotification">Отправить уведомление</button>
+  </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-  name: 'App'
+  name: 'App',
+
+  methods: {
+    async sendNotification() {
+      try {
+        const response = await axios.post('https://us-central1-telegram-web-app-9e595.cloudfunctions.net/sendNotification');
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error sending notification:', error);
+      }
+    }
+  }
 }
 </script>
 
