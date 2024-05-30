@@ -1,5 +1,3 @@
-
-
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import PageOne from '../components/PageOne.vue';
