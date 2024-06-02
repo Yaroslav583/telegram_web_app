@@ -21,8 +21,8 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/webhook",
+        "function": "webhook"
       }
     ]
   }
