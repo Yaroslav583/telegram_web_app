@@ -1,6 +1,6 @@
 {
   "functions": {
-    "source": "troodbdm_web (web)",
+    "source": "troodbdm_web",
     "predeploy": [
       "npm run lint"
     ],
@@ -16,13 +16,13 @@
     "public": "public",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+      "/.*",
+      "/node_modules/"
     ],
     "rewrites": [
       {
-        "source": "/webhook",
-        "function": "webhook"
+        "source": "",
+        "destination": "/index.html"
       }
     ]
   }
