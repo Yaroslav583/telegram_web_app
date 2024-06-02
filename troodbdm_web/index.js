@@ -1,9 +1,12 @@
 const functions = require('firebase-functions');
 const TelegramBot = require('node-telegram-bot-api');
 
-
 const token = '7452926719:AAGB0dhxcmSWQLv-OQkHlpFAXT6nL8ZLy1E';
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token);
+
+
+const webhookUrl = 'https://troodbdm.web.app/bot';
+bot.setWebHook(webhookUrl);
 
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
@@ -11,7 +14,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(chatId, `Check: ${projectUrl}`);
 });
 
-
 exports.bot = functions.https.onRequest((req, res) => {
-    bot.handleRequest(req, res);
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
 });
