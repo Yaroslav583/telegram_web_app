@@ -12,4 +12,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export default app;
+
+const projectId = firebaseConfig.projectId;
+
+// Строим URL вебхука с использованием projectId
+const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/bot`;
+
+export { app, webhookUrl };
+
