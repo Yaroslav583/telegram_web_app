@@ -5,7 +5,7 @@ const token = '7452926719:AAGB0dhxcmSWQLv-OQkHlpFAXT6nL8ZLy1E';
 const bot = new TelegramBot(token);
 
 
-const webhookUrl = 'https://troodbdm.web.app/bot';
+const webhookUrl = 'https://us-central1-troodbdm.cloudfunctions.net/bot';
 bot.setWebHook(webhookUrl);
 
 bot.onText(/\/start/, (msg) => {
