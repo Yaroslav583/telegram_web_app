@@ -1,13 +1,11 @@
 const functions = require('firebase-functions');
 const TelegramBot = require('node-telegram-bot-api');
-const firebaseConfig = require('../src/firebaseConfig');
 
 const token = '7452926719:AAGB0dhxcmSWQLv-OQkHlpFAXT6nL8ZLy1E';
 const bot = new TelegramBot(token);
 
-const projectId = firebaseConfig.projectId;
-const webhookUrl = firebaseConfig.webhookUrl;
 
+const webhookUrl = `https://us-central1-troodbdm.cloudfunctions.net/bot`;
 bot.setWebHook(webhookUrl);
 
 bot.onText(/\/start/, (msg) => {

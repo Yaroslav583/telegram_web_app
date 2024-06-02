@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+const { initializeApp } = require('firebase/app');
 
 const firebaseConfig = {
     apiKey: "AIzaSyCi1LfvDQjULj9jHh1T52VsIgPPQ4C6b8Q",
@@ -12,11 +12,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-
-const projectId = firebaseConfig.projectId;
-
-// Строим URL вебхука с использованием projectId
-const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/bot`;
-
-export { app, webhookUrl };
+module.exports = app;
 
